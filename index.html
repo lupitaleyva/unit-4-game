@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Game
+        </title>
+    </head>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<header>
+    <h1>
+                Sea Marine life collector
+    </h1>
+
+</header>
+<body>
+
+<div class="box">
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four choices bellow. By clicking on a marine life, you will add a specific amount of points to your total score</p>
+        <p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number</p>
+        <p>The value of each marine life is hidden from you until you click on it</p>
+        <p>Each time when the game starts, the game will change the values of each marine life</p>
+</div>
+   
+    <div>
+        <section class="secondbox">
+            <p id="wins">Wins:</p>
+            <p id="loses">Loses:</p>
+        </section>
+    </div>
+    
+    <div>
+        <section class="thirdbox">
+            <p id="target"></p>          
+        </section>
+    </div>
+
+    <div>
+        <section class="fourthbox">
+            <p id="yourTotalScore"></p>
+        </section>
+    </div>
+
+   
+
+            <div class="images">
+                <section >
+                   <img class="image" id="fish" src="assets/images/yellow fish.png" width="200px">
+               </section>
+               <section >
+                    <img class="image" id="star" src="assets/images/star.png"width="200px">
+               </section>
+               <section >
+                    <img class="image" id="shell" src="assets/images/concha.png"width="200px">
+               </section> 
+               <section >
+                    <img class="image" id="algae" src="assets/images/Algas.png"width="150px">
+                </section>
+           </div>
+                
+         
+        
+                
+<script>
+
+var counter = 0;
+var wins = 0;
+var loses = 0;
+
+var targetNumber =Math.floor((Math.random() * 120) + 19);
+$("#target").text(targetNumber);
+var numberOptions = Math.floor((Math.random() * 12) + 1);
+$("#fish").attr("seaLifeValue", numberOptions);
+var numberOptions = Math.floor((Math.random() * 12) + 1);
+$("#shell").attr("seaLifeValue", numberOptions);
+var numberOptions = Math.floor((Math.random() * 12) + 1);
+$("#star").attr("seaLifeValue", numberOptions);
+var numberOptions = Math.floor((Math.random() * 12) + 1);
+$("#algae").attr("seaLifeValue", numberOptions);
+
+
+
+
+$(".image").on("click", function(){
+
+    var audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", "assets/Bongo_Madness.mp3");
+
+    var seaLifeValue = ($(this).attr("seaLifeValue"));
+
+    console.log (seaLifeValue);
+
+    seaLifeValue = parseInt(seaLifeValue);
+    counter += seaLifeValue
+
+    $("#yourTotalScore").html("Total Score: " + counter);
+    
+
+    if (counter === targetNumber) {
+        alert("You win!");
+        wins += 1;
+        $("#wins").html("Wins: " + wins);
+    }
+
+    else if (counter >= targetNumber) {
+        alert("You lose!!");
+        loses += 1;
+        $("#loses").html("Loses" + loses);
+        reset();
+    }
+
+});
+
+
+function reset (){
+        var targetNumber =Math.floor((Math.random() * 120) + 19);
+        $("#target").text(targetNumber);
+        var numberOptions = Math.floor((Math.random() * 12) + 1);
+        $("#fish").attr("seaLifeValue", numberOptions);
+        var numberOptions = Math.floor((Math.random() * 12) + 1);
+        $("#shell").attr("seaLifeValue", numberOptions);
+        var numberOptions = Math.floor((Math.random() * 12) + 1);
+        $("#star").attr("seaLifeValue", numberOptions);
+        var numberOptions = Math.floor((Math.random() * 12) + 1);
+        $("#algae").attr("seaLifeValue", numberOptions);
+
+        counter = 0;
+        $("#yourTotalScore").html("Total Score: " + counter);
+
+    
+}
+    
+
+
+</script>
+
+    </div>
+</body>
+
+</html>

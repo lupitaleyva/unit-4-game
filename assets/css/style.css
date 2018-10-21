@@ -1,0 +1,96 @@
+
+header{
+    position: fixed;
+    width: 100%;
+    background-color:rgba(73, 218, 223);
+}
+
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    position: center;
+    text-align: center;
+}
+body{
+    background-image: url("../images/bigsea.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0;
+    
+}
+
+p{
+
+    font-family:sans-serif;
+    
+
+}
+
+.box{
+    width: 300px;
+    height: 600;
+    background: rgba(255 ,255 ,255, 0.7);
+    float: left;
+    margin-left: 20px;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+
+
+
+.secondbox{
+    width: 100px;
+    height: 600;
+    background: rgba(73, 218, 223, 0.7);
+    float: left;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.thirdbox{
+    width: 100px;
+    height: 600;
+    background: rgb(229, 253, 8);
+    float: left;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.fourthbox{
+    width: 100px;
+    height: 600;
+    background: rgb(253, 188, 8);
+    float: left;
+    padding: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+
+#fish{
+ float: right;   
+ margin-right: 80px;
+ margin-top: 100px;
+}
+
+#shell{
+    margin-left: 150px;
+    float: right;
+    margin-top: 50px;
+
+}
+
+#algae {
+    float: right;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+#star{
+    margin-top: 80px;
+    margin-right: 45px;
+    
+}
+
